@@ -1,0 +1,42 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a positive number and a one digit number:");
+        int fullNumber = input.nextInt();
+        int oneDigit = input.nextInt();
+        int countLength = countLengthOfFullNumber(fullNumber);
+        int[]arrPlaceOfDigit = creatingArray(fullNumber,countLength);
+        findDigitInNum(arrPlaceOfDigit,oneDigit);
+
+    }
+    public static int countLengthOfFullNumber(int fullNumber){
+        int copyFullNumber = fullNumber;
+        int countLength = 0;
+        while(fullNumber>0){
+            fullNumber=fullNumber/10;
+            countLength++;
+        }
+        return countLength;
+    }
+    public static int[]creatingArray(int fullNumber,int countLength){
+        int[] arrPlaceOfDigit = new int[countLength];
+        for(int i=0;i< arrPlaceOfDigit.length; i++){
+            arrPlaceOfDigit[i]=fullNumber%10;
+            fullNumber= fullNumber/10;
+        }
+        return arrPlaceOfDigit;
+    }
+
+    public static void findDigitInNum(int[]arrPlaceOfDigit, int oneDigit){
+        for(int j=0;j<arrPlaceOfDigit.length;j++){
+            if(arrPlaceOfDigit[j]==oneDigit){
+                System.out.print(j+=1);
+                j--;
+                System.out.print(", ");
+            }
+        }
+    }
+}
+
+
