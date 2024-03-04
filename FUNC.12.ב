@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class Main {
+    public static void Main(String[]args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("The amount of times the number 5 apeared is: ");
+        int count = createLoop();
+        System.out.println(count);
+
+    }
+    public static int createLoop(){
+        int count =0;
+        for(int i=5; i<201;i++){
+            if(i%10==5){
+                count++;
+            }else if(i/10==5){
+                count++;
+            }else if(i/100==5){
+                count++;
+            }else if((i/10)%10==5){
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+
+
