@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class Main {
+    public static void Main(String[]args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a number: ");
+        int num = input.nextInt();
+        int count = countNumberFive(num);
+        System.out.println(count);
+
+    }
+    public static int countNumberFive(int num){
+        int count =0;
+        while(num!=0){
+            if(num%10==5){
+                count++;
+            }
+            num = num/10;
+        }
+        return count;
+    }
+}
+
+
+
