@@ -1,0 +1,41 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a number and a digit:");
+        int number = input.nextInt();
+        int n = input.nextInt();
+        int numLength = countLengthOfFullNumber(number);
+        int[]arrOfNumber = creatingArray(number,numLength);
+        int sum =  sumNOfDigit(arrOfNumber, n);
+        System.out.println(sum);
+
+    }
+    public static int countLengthOfFullNumber(int fullNumber){
+        int countLength = 0;
+        while(fullNumber>0){
+            fullNumber=fullNumber/10;
+            countLength++;
+        }
+        return countLength;
+    }
+    public static int[]creatingArray(int fullNumber,int countLength){
+        int[] arrOfNumber = new int[countLength];
+        for(int i=0;i< arrOfNumber.length; i++){
+            arrOfNumber[i]=fullNumber%10;
+            fullNumber= fullNumber/10;
+        }
+        return arrOfNumber;
+    }
+
+    public static int sumNOfDigit(int[]arrOfNumber, int n){
+        int sum =0;
+        for(int i=0;i<n;i++){
+            sum = sum+arrOfNumber[i];
+        }
+        return sum;
+    }
+}
+
+
+
