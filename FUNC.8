@@ -1,0 +1,30 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[]args) {
+        int [] num = new int[10];
+        int j=1;
+        powTo100(num,j);
+        reverseArray(num,j);
+    }
+    public static int powTo100(int[] num,int j){
+        for(int i=0;i< num.length;i++){
+            num [i]=j*j;
+            j++;
+        }
+        return num[9];
+    }
+    public static void reverseArray(int[] num, int j){
+        int[]newArray=new int[10];
+        for(int i=0;i< num.length;i++){
+            newArray[i]=num[num.length-(j)];
+            j++;
+            System.out.println(newArray[i]);
+        }
+    }
+}
+
+
+
+
