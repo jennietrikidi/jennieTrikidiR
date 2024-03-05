@@ -1,0 +1,28 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[]args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter ten numbers: ");
+        int []num = new int[10];
+        for(int i=0;i<num.length;i++){
+            num[i]= input.nextInt();
+        }
+        int max = foundMax(num);
+        int min = foundMin(num);
+        System.out.println(max +"' "+min);
+    }
+    public static int foundMax(int[] num){
+        int max = Arrays.stream(num).max().getAsInt();
+        return max;
+    }
+    public static int foundMin(int[] num){
+        int min =Arrays.stream(num).min().getAsInt();
+        return min;
+    }
+}
+
+
+
+
